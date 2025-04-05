@@ -99,3 +99,4 @@ export const plans = [
       desc: 'Best for enterprise use.'
     },
   ]
+  
