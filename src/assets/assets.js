@@ -19,6 +19,8 @@ import star_group from './star_group.png'
 import credit_star from './credit_star.svg'
 import profile_icon from './profile_icon.png'
 
+
+
 export const assets = {
     logo,
     logo_icon,
