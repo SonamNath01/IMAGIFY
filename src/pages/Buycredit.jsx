@@ -2,11 +2,19 @@ import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
 import { assets, plans } from '../assets/assets';
+import { motion } from 'framer-motion';
 
 const Buycredit = () => {
   const{user}=useContext(AppContext); //importing the user from the context
   return (
-    <div className="min-h-[80vh] text-center pt-14 mb-10">
+    <motion.div
+      initial={{ opacity: 0.2, y: 100 }}
+      transition={{ duration: 1 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      
+    
+    className="min-h-[80vh] text-center pt-14 mb-10">
       <button className="border border-gray-400 px-10 py-2 rounded-full mb-6">Our Plans</button>
       <h1 className="text-3xl font-medium mb-10">Choose the plan</h1>
 
@@ -22,7 +30,7 @@ const Buycredit = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
