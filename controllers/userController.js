@@ -24,7 +24,7 @@ const registerUser = async (req, res) => {
         const newUser = new userModel(userData);
         const user = await newUser.save();
 
-        const token = jwt.sign({ id: user._id }, process.env.Jwt_SECRET);
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
 
         res.json({
             success: true,
@@ -56,7 +56,7 @@ const loginUser = async (req, res) => {
             return res.json({ success: false, message: "Invalid Credentials" });
         }
 
-        const token = jwt.sign({ id: user._id }, process.env.Jwt_SECRET);
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
 
         res.json({
             success: true,
