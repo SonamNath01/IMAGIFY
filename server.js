@@ -12,11 +12,16 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-await connectDB();
+try {
+  await connectDB();
 
-app.use('/api/user', userRouter);
-app.use('/api/image', imageRouter);
+  app.use('/api/user', userRouter);
+  app.use('/api/image', imageRouter);
 
-app.get('/', (req, res) => res.send("API working"));
+  app.get('/', (req, res) => res.send("API working"));
 
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+  app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+} catch (error) {
+  console.error('Failed to start server:', error.message);
+  process.exit(1);
+}
