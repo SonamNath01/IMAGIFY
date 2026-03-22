@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;600&family=Outfit:wght@100..900&display=swap');
+
+@import "tailwindcss";
+*{
+    font-family: Outfit;
+}
+.placeholder-colour {
+    color: #e0e0e0;
+    font-weight:300;
+}
